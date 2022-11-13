@@ -22,7 +22,7 @@ while [ $# -gt 0 ]; do
 done
 
 # print help
-if [ $# -eq 0 -o $h_flag -eq 1 ]; then
+if [ $h_flag -eq 1 ]; then
     echo "Usage: gcc-exec.sh [options] file"
     echo "Options:"
     echo "  -a, --wall      execute gcc with -Wall"
@@ -30,6 +30,14 @@ if [ $# -eq 0 -o $h_flag -eq 1 ]; then
     echo "  -w, --warnings  execute gcc with -Wall -Wextra"
     echo "  -v, --verbose   remain binary file"
     echo "  -h, --help      print this help"
+    exit 0
+fi
+
+# generate documentation
+# TODO: ad-hoc solution
+if [ $# -eq 0 ]; then
+    echo "generating documentation..."
+    doxygen /root/Doxyfile
     exit 0
 fi
 

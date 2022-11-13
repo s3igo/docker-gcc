@@ -48,4 +48,11 @@ $ docker run --rm -it --entrypoint=bash -v "$(pwd):/home" s3igo/gcc
 $ docker run --rm s3igo/gcc -h
 ```
 
+### generate documentation with [Doxygen](https://www.doxygen.nl/index.html)
+
+```shell
+$ docker run --rm -v "$(pwd):/home" s3igo/gcc
+
+```
+
 [^1]: For non-Mac, add `-u $(id -u):$(id -g)` to the docker run command options
