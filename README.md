@@ -41,9 +41,6 @@ $ make
 # execute just once
 $ docker run --rm -v "$(pwd):/home" s3igo/gcc input.c
 
-# attach to container
-$ docker run --rm -it --entrypoint=bash -v "$(pwd):/home" s3igo/gcc
-
 # show detailed usage
 $ docker run --rm s3igo/gcc -h
 ```
@@ -53,6 +50,12 @@ $ docker run --rm s3igo/gcc -h
 ```shell
 $ docker run --rm -v "$(pwd):/home" s3igo/gcc
 
+```
+
+### attach to container
+
+```shell
+$ docker run --rm -it --entrypoint=bash -v "$(pwd):/home" s3igo/gcc
 ```
 
 [^1]: For non-Mac, add `-u $(id -u):$(id -g)` to the docker run command options
