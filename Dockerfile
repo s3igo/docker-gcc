@@ -1,12 +1,12 @@
-FROM gcc:12.2.0-bullseye
+FROM debian:bullseye-slim
 
 RUN apt update && apt install -y \
-    doxygen \
+    build-essential \
     gdb \
-    graphviz \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 
-ENTRYPOINT ["gcc-exec"]
+# ENTRYPOINT ["gcc-exec"]
 
-WORKDIR /home
+# WORKDIR /home
