@@ -1,0 +1,26 @@
+{
+    "name": "gcc-dev",
+    "dockerComposeFile": "./compose.yaml",
+    "service": "gcc",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash",
+                        "icon": "terminal-bash"
+                    }
+                },
+                "C_Cpp.formatting": "disabled",
+                "C_Cpp.intelliSenseEngine": "disabled"
+            },
+            "extensions": [
+                "formulahendry.code-runner",
+                "ms-vscode.cpptools",
+                "llvm-vs-code-extensions.vscode-clangd"
+            ]
+        }
+    }
+}

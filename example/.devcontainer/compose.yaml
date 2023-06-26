@@ -1,0 +1,11 @@
+services:
+  gcc:
+    container_name: gcc-dev
+    image: s3igo/gcc:latest
+    tty: true
+    volumes:
+      - ..:/workspace
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
