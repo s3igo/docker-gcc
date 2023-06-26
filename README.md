@@ -1,26 +1,26 @@
 # docker-gcc
 
-Docker image of gcc for C/C++ development
+Docker image for development with gcc, intended for development in c and c++
 
-## detail
+Provided image repository: [s3igo/gcc](https://hub.docker.com/r/s3igo/gcc)
 
-### base image
+## Description
 
-- [gcc](https://hub.docker.com/_/gcc):12.2.0-bullseye
+Designed for development with Devcontainer or by bind-mounting source code on the command line.
 
-### additional packages
+### Base image
 
-- doxygen: 1.9.1
-- gdb: 10.1.90
-- graphviz: 2.43.0
+[debian:bullseye-slim](https://hub.docker.com/_/debian)
 
-### entrypoint
+### Additional packages
 
-- [gcc-exec](./gcc-exec.sh)
+- build-essential(gcc, g++, make, etc.)
+- clangd
+- gdb
+- git
 
-### deliverables repository
-
-- [s3igo/gcc](https://hub.docker.com/r/s3igo/gcc)
+> **Note**
+> In addition, [my dotfiles](https://github.com/s3igo/dotfiles) are included in the layers of the image.
 
 ## usage
 
@@ -56,6 +56,14 @@ $ docker run --rm -v "$(pwd):/home" s3igo/gcc
 
 ```shell
 $ docker run --rm -it --entrypoint=bash -v "$(pwd):/home" s3igo/gcc
+```
+
+## example
+
+```shell
+$ docker compose -f example/.devcontainer/compose.yaml run --rm gcc
+
+\# gcc hello.c -o hello && ./hello && rm hello
 ```
 
 [^1]: For non-Mac, add `-u $(id -u):$(id -g)` to the docker run command options
