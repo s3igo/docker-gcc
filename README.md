@@ -6,7 +6,7 @@ Provided image repository: [s3igo/gcc](https://hub.docker.com/r/s3igo/gcc)
 
 ## Description
 
-Designed for development with Devcontainer or by bind-mounting source code on the command line.
+Designed for development with Devcontainer or via CLI Docker commands to bind-mount source code.
 
 ### Base image
 
