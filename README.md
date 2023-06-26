@@ -22,48 +22,44 @@ Designed for development with Devcontainer or by bind-mounting source code on th
 > **Note**
 > In addition, [my dotfiles](https://github.com/s3igo/dotfiles) are included in the layers of the image.
 
-## usage
+## Usage
 
-### obtain image
-
-```shell
-# pull from Docker Hub
-$ docker pull s3igo/gcc
-
-# or build locally
-$ cd docker-gcc
-$ make
-```
-
-### compile and execute[^1]
+Pull image
 
 ```shell
-# execute just once
-$ docker run --rm -v "$(pwd):/home" s3igo/gcc input.c
-
-# show detailed usage
-$ docker run --rm s3igo/gcc -h
+docker pull s3igo/gcc
 ```
 
-### generate documentation with [Doxygen](https://www.doxygen.nl/index.html)
+Run container
 
 ```shell
-$ docker run --rm -v "$(pwd):/home" s3igo/gcc
-
+docker run --rm -it s3igo/gcc
 ```
 
-### attach to container
+## Example
 
-```shell
-$ docker run --rm -it --entrypoint=bash -v "$(pwd):/home" s3igo/gcc
-```
+> **Note**
+> In the following, the `$` prompt represents the host shell,
+> the `#` prompt represents the container shell,
+> and the `>` symbol represents the VS Code command palette.
 
-## example
+### Using with CLI
 
-```shell
-$ docker compose -f example/.devcontainer/compose.yaml run --rm gcc
+1. Start container  
+`$ docker compose -f example/.devcontainer/compose.yaml run --rm gcc`
 
-\# gcc hello.c -o hello && ./hello && rm hello
-```
+2. Compile and run the C source code with gcc  
+`# gcc hello.c -o hello && ./hello`
 
-[^1]: For non-Mac, add `-u $(id -u):$(id -g)` to the docker run command options
+### Using with Devcontainer
+
+1. Open the example project in VS Code  
+`$ code example`
+
+2. Select `Reopen in Container` from the command palette  
+`> Dev Containers: Reopen in Container`
+
+3. Open and run the VS Code terminal or use the Code Runner extension  
+`# gcc hello.c -o hello && ./hello` or `> Run Code`
+
+This method allows using the clang-format with VS Code's clangd extension or debugging with gdb.
