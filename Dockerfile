@@ -6,8 +6,6 @@ RUN apt update && apt install -y \
     graphviz \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./Doxyfile /root/Doxyfile
-COPY ./gcc-exec.sh /usr/local/bin/gcc-exec
 
 ENTRYPOINT ["gcc-exec"]
 
