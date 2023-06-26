@@ -3,6 +3,7 @@ FROM debian:bullseye-slim
 # install dependencies
 RUN apt update && apt install -y \
   build-essential \
+  clangd \
   gdb \
   git \
   && rm -rf /var/lib/apt/lists/*
