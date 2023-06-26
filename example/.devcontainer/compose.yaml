@@ -3,6 +3,7 @@ services:
     container_name: gcc-dev
     image: s3igo/gcc:latest
     tty: true
+    working_dir: /workspace
     volumes:
       - ..:/workspace
     cap_add:
