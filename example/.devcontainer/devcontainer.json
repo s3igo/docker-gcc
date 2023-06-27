@@ -1,6 +1,6 @@
 {
     "name": "gcc-dev",
-    "dockerComposeFile": "./compose.yaml",
+    "dockerComposeFile": "../compose.yaml",
     "service": "gcc",
     "workspaceFolder": "/workspace",
     "customizations": {

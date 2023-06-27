@@ -44,7 +44,7 @@ docker run --rm -it s3igo/gcc
 ### Using with CLI
 
 1. Start container  
-`$ docker compose -f example/.devcontainer/compose.yaml run --rm gcc`
+`$ docker compose -f example/compose.yaml run --rm gcc`
 
 2. Compile and run the C source code with gcc  
 `# gcc hello.c -o hello && ./hello`
