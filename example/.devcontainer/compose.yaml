@@ -1,7 +1,9 @@
 services:
   gcc:
     container_name: gcc-dev
-    image: s3igo/gcc:latest
+    build:
+      context: .
+      dockerfile: ../../Dockerfile
     tty: true
     working_dir: /workspace
     volumes:
