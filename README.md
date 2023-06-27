@@ -1,6 +1,6 @@
 # docker-gcc
 
-Dockerfile for development with gcc, intended for development in c and c++
+Dockerfile for development with gcc, intended for development in C and C++
 
 ## Description
 
