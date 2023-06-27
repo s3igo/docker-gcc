@@ -28,5 +28,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.actor }}/gcc:latest
+          tags: ghcr.io/${{ github.actor }}/gcc
           platforms: linux/amd64,linux/arm64
