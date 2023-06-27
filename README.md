@@ -1,8 +1,6 @@
 # docker-gcc
 
-Docker image for development with gcc, intended for development in c and c++
-
-Provided image repository: [s3igo/gcc](https://hub.docker.com/r/s3igo/gcc)
+Dockerfile for development with gcc, intended for development in c and c++
 
 ## Description
 
@@ -24,10 +22,10 @@ Designed for development with Devcontainer or via CLI Docker commands to bind-mo
 
 ## Usage
 
-Pull image
+Build image
 
 ```shell
-docker pull s3igo/gcc
+docker build -t s3igo/gcc .
 ```
 
 Run container
