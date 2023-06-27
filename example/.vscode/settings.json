@@ -1,0 +1,8 @@
+{
+    "code-runner.executorMap": {
+        "c": "cd $dir && gcc -O2 -Wall -Wextra $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    },
+    "editor.formatOnSave": true,
+    "code-runner.runInTerminal": true,
+}
